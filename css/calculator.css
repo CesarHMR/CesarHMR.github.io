@@ -1,10 +1,9 @@
 .calculator{
-    background-color: cadetblue;
+    background-color: var(--roxo);
     border-radius: 2rem;
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
 
-    width: 25rem;
-    height: 40rem;
+    width: 30rem;
 
     padding: 2rem;
     margin: 15rem auto;
@@ -12,19 +11,22 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-}
+    gap: 1rem;
 
+    border: var(--outline) .7rem solid;
+}
 .calculator__visor{
     width: 100%;
-    height: 7rem;
+    height: 9rem;
     padding: 1rem;
 
-    background-color: white;
+    background-color: var(--visor);
     border-radius: 1.5rem;
-    border-bottom: rgb(75, 136, 138) solid .3rem;
+    border: var(--outline) .7rem solid;
 
     text-align: end;
     font-family: 'Nunito', sans-serif;
+    font-weight: 800;
     color: rgb(0, 51, 51);
 
     display: grid;
@@ -34,6 +36,7 @@
 .calculator__visor #main{ font-size: 2.5rem; }
 .calculator__visor #secundary{ 
     font-size: 1rem;
+    
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -41,19 +44,16 @@
 }
 
 .calculator hr{
-    border:  rgb(75, 136, 138) solid .2rem;
+    border:  var(--outline) solid .4rem;
     border-radius: 1rem;
 }
 
 .calculator__input-area{
-    background-color: rgb(75, 136, 138);
-    border-radius: 1.5rem;
-
     width: 100%;
     height: 70%;
-
-    padding: 2rem;
-
+    
+    gap: 1rem;
+    
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -63,39 +63,85 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: .3rem;
+    grid-gap: 1rem;
+    grid-column: 1/2;
+    grid-row: 1/3;
 }
 
 .calculator__input-area__math{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: .3rem;
+    grid-template-rows: 1fr;
+    column-gap: 1rem;
+    grid-column: 2/3;
+    grid-row: 1/3;
 }
 
 .calculator__input-area button{
-    border: none;
+    min-height: 3rem;
+
+    border: var(--outline) .7rem solid;
     border-radius: 1rem;
     outline: none;
-    background-color:  white;
+    background-color:  var(--buttons);
 
     font-family: 'Nunito', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     font-size: 2.5rem;
-    color: rgb(0, 51, 51);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--outline);
+    text-align: center;
 
     cursor: pointer;
 }
-
 #clean{
-    height: 3rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 2.2rem;
+    background-color: var(--clean);
+    border: var(--outline) .7rem solid;
+    grid-column: 3/4;
+    grid-row: 1/3;
+    height: 100%;
 }
+#equal{
+    background-color: var(--equal);
+    border: var(--outline) .7rem solid;
+}
+@media only screen and (min-width: 600px) {
+    .calculator{
+        background-color: var(--roxo);
+        border-radius: 2rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+    
+        width: 50rem;
+    
+        padding: 2rem;
+        margin: 15rem auto;
+    
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 1rem;
+    
+        border: var(--outline) .7rem solid;
+    }
+    .calculator__input-area{
+        width: 100%;
+        height: 70%;
+        
+        gap: 1rem;
+        
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-rows: 1fr 3fr;
+        justify-content: center;
+        align-items: center;
+    }
 
-.math button{
-    height: 3rem;
+    .calculator__input-area__math{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1rem;
+        grid-column: 2/3;
+        grid-row: 1/3;
+        height: 100%;
+    } 
 }

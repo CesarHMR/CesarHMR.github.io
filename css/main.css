@@ -2,23 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 *{ margin: 0; padding: 0; box-sizing: border-box;}
-:root{ font-size: 10px; }
-::-webkit-scrollbar{
-    width: 2rem;
-}
-::-webkit-scrollbar-track{
-    background-color:  #3d3d3d;
-}
-::-webkit-scrollbar-thumb{
-    background-color: rgb(0, 158, 158);
+:root{
+    font-size: 10px;
+    --roxo: #3d454d;
+    --roxo-escuro: #71848a;
+    --buttons: #82bce2;
+    --equal: rgb(238, 218, 37);
+    --background: rgb(36, 110, 153);
+    --outline: rgb(4, 13, 63);
+    --visor: rgb(175, 255, 168);
+    --clean: rgb(236, 71, 71);
+    --clean-outline:rgb(54, 21, 21);
 }
 
 .main{
-    min-height: 100vh;
-    background-color: blanchedalmond;
+    height: 100vh;
+    background-color: var(--background);
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+    justify-content: center;
 }
